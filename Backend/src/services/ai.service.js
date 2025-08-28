@@ -1,31 +1,31 @@
-// import { GoogleGenAI } from "@google/genai";
+// function justlikethat(){
+//    // import { GoogleGenAI } from "@google/genai";
 
-// const ai = new GoogleGenAI(process.env.GOOGLE_GEMINI_KEY);
+// // const ai = new GoogleGenAI(process.env.GOOGLE_GEMINI_KEY);
 
-// async function main() {
-//   const response = await ai.models.generateContent({
-//     model: "gemini-2.5-flash",
-//     contents: "Explain how AI works in a few words",
-//     systemInstruction: `
-//     You are an code reviewer, who have an expertise in developement.
-//     You look for code and find the problems and suggest the solution to 
-//     the developer.
+// // async function main() {
+// //   const response = await ai.models.generateContent({
+// //     model: "gemini-2.5-flash",
+// //     contents: "Explain how AI works in a few words",
+// //     systemInstruction: `
+// //     You are an code reviewer, who have an expertise in developement.
+// //     You look for code and find the problems and suggest the solution to 
+// //     the developer.
 
 
-//     you always try to find the best solution for the developer and also try
-//     to make the code more efficient and clean.
+// //     you always try to find the best solution for the developer and also try
+// //     to make the code more efficient and clean.
 
     
-//     `,
-//   });
-//   return response.text;
+// //     `,
+// //   });
+// //   return response.text;
+// // }
+
+// // await main();
+
+// // module.exports = generateContent
 // }
-
-// await main();
-
-// module.exports = generateContent
-
-
 
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
@@ -101,5 +101,4 @@ async function aiService(code) {
   return response.response.text();
 }
 
-module.exports = aiService;
-
+module.exports = aiService
