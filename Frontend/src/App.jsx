@@ -20,10 +20,46 @@ function App() {
     prism.highlightAll()
   }, [])
 
-  async function reviewCode() {
-   const response = await axios.post("http://localhost:3000/ai/get-review", {code})
-   setReview(response.data)
+  // async function reviewCode() {
+  //  const response = await axios.post("http://localhost:3000/ai/get-review", {code})
+  //  setReview(response.data)
+  // }
+
+  // console.log("API Base URL:", import.meta.env.VITE_API_URL)
+  // console.log("Env Vars:", import.meta.env)
+
+
+  // async function reviewCode() {
+  //   try {
+  //     const response = await axios.post(
+  //       `${import.meta.env.VITE_API_URL}/ai/get-review`,
+  //       { code} 
+  //     )
+  //     setReview(response.data)
+  //   } catch (error) {
+  //     console.error("Error while fetching review:", error)
+  //     setReview("⚠️ Review fetch karte waqt error aaya. Please try again.")
+  //   }
+  // }
+
+  const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:3000";
+
+async function reviewCode() {
+  try {
+    console.log("API Base URL:", API_BASE);
+
+    const response = await axios.post(
+      `${API_BASE}/ai/get-review`,
+      { code}
+    )
+    setReview(response.data)
+  } catch (error) {
+    console.error("Error while fetching review:", error)
+    setReview("⚠️ Review fetch karte waqt error aaya. Please try again.")
   }
+}
+
+  
 
   return (
     <>
