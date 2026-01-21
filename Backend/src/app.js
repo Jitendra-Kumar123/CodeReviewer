@@ -8,7 +8,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(cors())
 
 app.get("/", function(req, res){
-    res.send("hey");
+    res.send("Backend is running on render");
 })
 
 app.use("/ai", aiRoutes);
